@@ -19,3 +19,8 @@ aws configure
 
 <img src="lab2.png">
 
+### Installing bedrock-client 
+
+```
+npm install -g @aws-sdk/client-bedrock
+```
