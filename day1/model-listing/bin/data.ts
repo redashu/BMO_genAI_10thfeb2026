@@ -27,5 +27,25 @@ export class BedrockModelListerStack extends cdk.Stack {
         resources: ['*'],
       })
     );
+
+    // API Gateway
+    const api = new apigateway.RestApi(this, 'BedrockModelApi', {
+      restApiName: 'Bedrock Model Listing API',
+      deployOptions: {
+        stageName: 'prod',
+      },
+    });
+
+    const modelsResource = api.root.addResource('models');
+
+    modelsResource.addMethod(
+      'GET',
+      new apigateway.LambdaIntegration(modelListerLambda)
+    );
+
+    // Output API URL
+    new cdk.CfnOutput(this, 'ApiUrl', {
+      value: `${api.url}models`,
+    });
 }
 }
