@@ -18,5 +18,14 @@ export class BedrockModelListerStack extends cdk.Stack {
       timeout: cdk.Duration.seconds(30),
     });
 
+     // IAM permission for Control Plane
+    modelListerLambda.addToRolePolicy(
+      new iam.PolicyStatement({
+        actions: [
+          'bedrock:ListFoundationModels'
+        ],
+        resources: ['*'],
+      })
+    );
 }
 }
