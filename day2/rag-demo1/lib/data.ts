@@ -18,7 +18,7 @@ export class BedrockRagDemoStack extends cdk.Stack {
       memorySize: 256,
       environment: {
         KNOWLEDGE_BASE_ID: 'EHLDBBDLXP',
-        MODEL_ARN: 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0',
+        MODEL_ARN: 'arn:aws:bedrock:us-east-1::foundation-model/meta.llama3-8b-instruct-v1:0',
       },
     });
     // IAM for RAG
