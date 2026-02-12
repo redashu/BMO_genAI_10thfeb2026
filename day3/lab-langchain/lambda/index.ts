@@ -1,4 +1,4 @@
-import { Bedrock } from "langchain/llms/bedrock";
+import { Bedrock } from "@langchain/community/llms/bedrock";
 
 
 export const handler = async (event: any) => {
@@ -24,7 +24,7 @@ ${question}
       },
     });
 
-    const response = await model.call(formattedPrompt);
+    const response = await model.invoke(formattedPrompt);
 
     return {
       statusCode: 200,
