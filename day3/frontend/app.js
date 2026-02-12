@@ -1,4 +1,4 @@
-const API_URL = "https://5mft1k68y5.execute-api.us-east-1.amazonaws.com/prod/rag";
+const API_URL = "https://bde91x1djd.execute-api.us-east-1.amazonaws.com/sit2/rag";
 
 const chat = document.getElementById("chat");
 const input = document.getElementById("input");
